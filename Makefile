@@ -9,10 +9,10 @@ TARGET = explorer3d
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
-    $(CXX) -o $@ $^ $(LDFLAGS)
+	$(CXX) -o $@ $^ $(LDFLAGS)
 
 %.o: %.cpp
-    $(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-        rm -f $(OBJ) $(TARGET)
+	rm -f $(OBJ) $(TARGET)

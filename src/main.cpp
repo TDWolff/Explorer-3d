@@ -1,6 +1,6 @@
 #include <SDL2/SDL.h>
 #include <GL/gl.h>
-#include <GL/glu.h>
+#include <GL/freeglut.h>
 #include <iostream>
 
 // Initialize OpenGL settings
@@ -16,35 +16,30 @@ void initOpenGL() {
 void drawCube() {
     glBegin(GL_QUADS);
 
-    // Front face (Red)
     glColor3f(1.0f, 0.0f, 0.0f);
     glVertex3f(-1.0f, -1.0f, 1.0f);
     glVertex3f(1.0f, -1.0f, 1.0f);
     glVertex3f(1.0f, 1.0f, 1.0f);
     glVertex3f(-1.0f, 1.0f, 1.0f);
 
-    // Back face (Green)
     glColor3f(0.0f, 1.0f, 0.0f);
     glVertex3f(-1.0f, -1.0f, -1.0f);
     glVertex3f(-1.0f, 1.0f, -1.0f);
     glVertex3f(1.0f, 1.0f, -1.0f);
     glVertex3f(1.0f, -1.0f, -1.0f);
 
-    // Left face (Blue)
     glColor3f(0.0f, 0.0f, 1.0f);
     glVertex3f(-1.0f, -1.0f, -1.0f);
     glVertex3f(-1.0f, -1.0f, 1.0f);
     glVertex3f(-1.0f, 1.0f, 1.0f);
     glVertex3f(-1.0f, 1.0f, -1.0f);
 
-    // Right face (Yellow)
     glColor3f(1.0f, 1.0f, 0.0f);
     glVertex3f(1.0f, -1.0f, -1.0f);
     glVertex3f(1.0f, -1.0f, 1.0f);
     glVertex3f(1.0f, 1.0f, 1.0f);
     glVertex3f(1.0f, 1.0f, -1.0f);
 
-    // Top face (Cyan)
     glColor3f(0.0f, 1.0f, 1.0f);
     glVertex3f(-1.0f, 1.0f, -1.0f);
     glVertex3f(1.0f, 1.0f, -1.0f);
@@ -127,7 +122,7 @@ int main(int argc, char *argv[]) {
         SDL_GL_SwapWindow(window);
 
         // Update the rotation angle
-        angle += 0.5f;
+        angle += 0.005f;
     }
 
     // Clean up and close the program
